@@ -1,5 +1,10 @@
 $ErrorActionPreference = "Stop"
 
+Write-Host "PWD = $PWD"
+
+Get-ChildItem -Recurse
+
+
 docker run --rm `
   -v "${PWD}:/work" `
   --workdir /work `
