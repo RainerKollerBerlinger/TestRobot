@@ -1,0 +1,17 @@
+# Copy this file to credentials.py and fill in your values.
+# credentials.py is gitignored — never commit it.
+
+# ── AWS IoT ───────────────────────────────────────────────────────────────────
+# Found in AWS console: IoT Core → Settings → Device data endpoint
+AWS_ENDPOINT = "REPLACE-ats.iot.us-east-1.amazonaws.com"
+
+# ── SharePoint / Microsoft Graph ─────────────────────────────────────────────
+# Azure portal: Entra ID → App registrations → your app
+SP_TENANT_ID     = "36839a65-7f3f-4bac-9ea4-f571f10a9a03"
+SP_CLIENT_ID     = "3383e99d-87a9-44db-ab37-f52c6ba7363a"
+SP_CLIENT_SECRET = "6Ya8Q~XWz___________.l9d.a99"
+
+# SharePoint site and list IDs — find them via Graph Explorer or the sample script
+SP_SITE_ID                = "carcgl.sharepoint.com,f415b8c7-418d-4d1f-ae48-99006b173a02,d7738eeb-76cc-4d93-8b2d-98c12055feeb"
+SP_COMMAND_LIMITS_LIST_ID = "b7da3c55-7c63-456d-aba6-374ab3229ad1"
+SP_BLOCK_COMMANDS_LIST_ID = "8f6cb97b-e763-4251-879f-3551622c9387"

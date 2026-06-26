@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.7 on win32)" generated="2026-06-12T14:35:56.823744" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework" source="C:\Users\KollerRa\OneDrive - Carrier Corporation\RkoDocuments\Projects\035_E2E_Testing\26-06-10_RobotFramework\RobotFramework">
+<suite id="s1-s1" name="TestScenes" source="C:\Users\KollerRa\OneDrive - Carrier Corporation\RkoDocuments\Projects\035_E2E_Testing\26-06-10_RobotFramework\RobotFramework\TestScenes.robot">
+<kw name="Suite Connect" owner="test_keywords" type="SETUP">
+<kw name="Connect To Broker" owner="MqttClient">
+<msg time="2026-06-12T14:35:57.731677" level="INFO">Connected to AWS IoT!</msg>
+<arg>port=8883</arg>
+<status status="PASS" start="2026-06-12T14:35:57.162626" elapsed="0.569637"/>
+</kw>
+<kw name="Subscribe" owner="MqttClient">
+<arg>${VERIFY_TRU}</arg>
+<status status="PASS" start="2026-06-12T14:35:57.732509" elapsed="0.501114"/>
+</kw>
+<kw name="Load Commands" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:06.821950" level="INFO">SharePointCommandRepository: loaded 9 command entries.
+Command ID: ('ML5p2_99_ASC_ASCEN', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Min', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E00010000000000000000000000000000000000000000000000000000000000000000C3~', 'SetExpected': '%', 'ReadCommand': '^?99300F2E0001C2~', 'ReadExpected': '%^?99300F2E00010000000000000000000000000000000000000000000000000000000000000000C2~', 'TeleExpected': '0', 'CloudExpected': '0'}
+----------------------------------------
+Command ID: ('ML5p2_99_ASC_ASCEN', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Max', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E00010100000000000000000000000000000000000000000000000000000000000000C4~', 'SetExpected': '%', 'ReadCommand': '^?99300F2E0001C2~', 'ReadExpected': '%^?99300F2E00010100000000000000000000000000000000000000000000000000000000000000C3~', 'TeleExpected': '1', 'CloudExpected': '1'}
+----------------------------------------
+Command ID: ('ML5p2_99_Clock_DAYMON', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Clock_DAYMON', 'LimitType': 'Min', 'TeleField': 'DAYMON', 'CloudField': 'DAYMON', 'SetCommand': '^@99300301040100000000000000000000000000000000000000000000000000000000000000009E~', 'SetExpected': '%', 'ReadCommand': '^?9930030104019D~', 'ReadExpected': '%^?99300301040100000000000000000000000000000000000000000000000000000000000000009D~', 'TeleExpected': '00', 'CloudExpected': ''}
+----------------------------------------
+Command ID: ('ML5p2_99_Clock_DAYMON', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_Clock_DAYMON', 'LimitType': 'Max', 'TeleField': 'DAYMON', 'CloudField': 'DAYMON', 'SetCommand': '^@9930030104016300000000000000000000000000000000000000000000000000000000000000A7~', 'SetExpected': '%', 'ReadCommand': '^?9930030104019D~', 'ReadExpected': '%^?9930030104016300000000000000000000000000000000000000000000000000000000000000A6~', 'TeleExpected': '99', 'CloudExpected': ''}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_CO2SET', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_CO2SET', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'CO2Setpoint', 'SetCommand': '^@9930120215011400000000000000000000000000000000000000000000000000000000000000A6~', 'SetExpected': '%', 'ReadCommand': '^?993012021501A0~', 'ReadExpected': '%^?9930120215011400000000000000000000000000000000000000000000000000000000000000A5~', 'TeleExpected': '20', 'CloudExpected': '20.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_CO2SET', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_CO2SET', 'LimitType': 'Max', 'TeleField': '', 'CloudField': 'CO2Setpoint', 'SetCommand': '^@9930120215012800000000000000000000000000000000000000000000000000000000000000AB~', 'SetExpected': '%', 'ReadCommand': '^?993012021501A0~', 'ReadExpected': '%^?9930120215012800000000000000000000000000000000000000000000000000000000000000AA~', 'TeleExpected': '40', 'CloudExpected': '40.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_O2SET', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_O2SET', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'O2Setpoint', 'SetCommand': '^@9930120216010A00000000000000000000000000000000000000000000000000000000000000B3~', 'SetExpected': '%', 'ReadCommand': '^?993012021601A1~', 'ReadExpected': '%^?9930120216010A00000000000000000000000000000000000000000000000000000000000000B2~', 'TeleExpected': '10', 'CloudExpected': '10.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_O2SET', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_O2SET', 'LimitType': 'Max', 'TeleField': '', 'CloudField': 'O2Setpoint', 'SetCommand': '^@9930120216012800000000000000000000000000000000000000000000000000000000000000AC~', 'SetExpected': '%', 'ReadCommand': '^?993012021601A1~', 'ReadExpected': '%^?9930120216012800000000000000000000000000000000000000000000000000000000000000AB~', 'TeleExpected': '40', 'CloudExpected': '40.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_DFR', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_DFR', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'DefrostInterval', 'SetCommand': '^@99301202000104000000000000000000000000000000000000000000000000000000000000009F~', 'SetExpected': '%', 'ReadCommand': '^?9930120200019A~', 'ReadExpected': '%^?99301202000104000000000000000000000000000000000000000000000000000000000000009E~', 'TeleExpected': '4', 'CloudExpected': '4'}
+----------------------------------------</msg>
+<doc>Fetch both SharePoint lists, resolve lookups, and build the command cache.</doc>
+<status status="PASS" start="2026-06-12T14:35:58.234045" elapsed="8.588228"/>
+</kw>
+<status status="PASS" start="2026-06-12T14:35:57.162054" elapsed="9.660368"/>
+</kw>
+<test id="s1-s1-t1" name="Set Four Commands To Minimum" line="18">
+<kw name="Start Test Case" owner="test_keywords">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.828912" level="INFO">${TC_ID} = 1</msg>
+<arg>${TC_ID}</arg>
+<arg>${test_case_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.828311" elapsed="0.000823"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.829952" level="INFO">${TC_NAME} = Set Low Values</msg>
+<arg>${TC_NAME}</arg>
+<arg>${test_case}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.829326" elapsed="0.000917"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.831200" level="INFO">${SCENE_ID} = 1</msg>
+<arg>${SCENE_ID}</arg>
+<arg>${scene_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.830514" elapsed="0.001347"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.832795" level="INFO">${DEVICE_ID} = ESPTESTSIMULATOR</msg>
+<arg>${DEVICE_ID}</arg>
+<arg>${device_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.832170" elapsed="0.000913"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.833547" level="INFO">${STEP} = 0</msg>
+<arg>${STEP}</arg>
+<arg>${0}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.833216" elapsed="0.000480"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.834529" level="INFO">${CLOUD_CHECKS} = []</msg>
+<var>${CLOUD_CHECKS}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.833823" elapsed="0.000916"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.835954" level="INFO">${CLOUD_CHECKS} = []</msg>
+<arg>${CLOUD_CHECKS}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.835318" elapsed="0.000848"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.837060" level="INFO">&amp;{tele} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values }</msg>
+<var>&amp;{tele}</var>
+<arg>DeviceID=${device_id}</arg>
+<arg>SceneID=${scene_id}</arg>
+<arg>TestCaseID=${test_case_id}</arg>
+<arg>TestCase=${test_case}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.836300" elapsed="0.000927"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.837932" level="INFO">${TELE} = {'DeviceID': 'ESPTESTSIMULATOR', 'SceneID': '1', 'TestCaseID': '1', 'TestCase': 'Set Low Values'}</msg>
+<arg>${TELE}</arg>
+<arg>${tele}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.837400" elapsed="0.000731"/>
+</kw>
+<arg>test_case_id=1</arg>
+<arg>test_case=Set Low Values</arg>
+<arg>scene_id=${SCENE_ID}</arg>
+<arg>device_id=${DEVICE_ID}</arg>
+<status status="PASS" start="2026-06-12T14:36:06.827394" elapsed="0.010869"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:06.839228" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Min', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E0001000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:06.839004" elapsed="0.000387"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.839901" level="INFO">${STEP} = 1</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.839508" elapsed="0.000594"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.840512" level="INFO">${STEP} = 1</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.840219" elapsed="0.000405"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:06.841262" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=1 | BlockCmdID=ML5p2_99_ASC_ASCEN | SetCommand=^@99300F2E0001000000000000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:06.840730" elapsed="0.000892"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:06.841800" elapsed="0.000429"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:07.645602" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set Low Values', 'SetExpected': '%', 'SetCommand': '^@99300F2E00010000000000000000000000000000000000000000000000000000000000000000C3~',...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:06.842343" elapsed="0.803625"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:07.646617" elapsed="0.000589"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:07.646175" elapsed="0.001149"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:07.648318" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=1 | BlockCmdID=ML5p2_99_ASC_ASCEN | ReadCommand=^?99300F2E0001C2~ | ReadExpected=%^?99300F2E00010000000000000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:07.647476" elapsed="0.001049"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:07.648776" elapsed="0.000462"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:08.252093" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?99300F2E0001C2~', 'TestCase': 'Set Low Values', 'ReadExpected': '%^?99300F2E00010000000000000000000000000000000000000000000000000000000000000000C2~',...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:07.649359" elapsed="0.602957"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.253112" elapsed="0.000339"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.252549" elapsed="0.000981"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:08.254109" level="INFO">&amp;{tele_entry} = { Step=1 | ReadCommand=^?99300F2E0001C2~ | ReadExpected=%^?99300F2E00010000000000000000000000000000000000000000000000000000000000000000C2~ | ReadValue=%^?99300F2E00010000000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.253633" elapsed="0.000601"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.254357" elapsed="0.000960"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:08.256317" level="INFO">&amp;{cloud_check} = { field=RefeerOperatingMode.AutomaticSetPointChangeMode | expected=0 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.255577" elapsed="0.000985"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.256797" elapsed="0.000383"/>
+</kw>
+<arg>ML5p2_99_ASC_ASCEN</arg>
+<arg>Min</arg>
+<status status="PASS" start="2026-06-12T14:36:06.838675" elapsed="1.418591"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:08.258975" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_Parameter_CO2SET', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'CO2Setpoint', 'SetCommand': '^@9930120215011400000000000000000000000000000000000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:08.258743" elapsed="0.000359"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:08.259608" level="INFO">${STEP} = 2</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.259223" elapsed="0.000498"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:08.260120" level="INFO">${STEP} = 2</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.259841" elapsed="0.000400"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:08.260843" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=2 | BlockCmdID=ML5p2_99_Parameter_CO2SET | SetCommand=^@99301202150114000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.260358" elapsed="0.000618"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:08.261093" elapsed="0.000349"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:08.863454" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set Low Values', 'SetExpected': '%', 'SetCommand': '^@9930120215011400000000000000000000000000000000000000000000000000000000000000A6~',...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:08.261545" elapsed="0.602146"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.864549" elapsed="0.000405"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.864049" elapsed="0.000984"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:08.865677" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=2 | BlockCmdID=ML5p2_99_Parameter_CO2SET | ReadCommand=^?993012021501A0~ | ReadExpected=%^?993012021501140000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:08.865138" elapsed="0.000717"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:08.866016" elapsed="0.000377"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:09.468740" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?993012021501A0~', 'TestCase': 'Set Low Values', 'ReadExpected': '%^?9930120215011400000000000000000000000000000000000000000000000000000000000000A5~',...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:08.866508" elapsed="0.602731"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.470096" elapsed="0.000673"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.469511" elapsed="0.001336"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:09.472200" level="INFO">&amp;{tele_entry} = { Step=2 | ReadCommand=^?993012021501A0~ | ReadExpected=%^?9930120215011400000000000000000000000000000000000000000000000000000000000000A5~ | ReadValue=%^?9930120215011400000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.470952" elapsed="0.001445"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.472544" elapsed="0.000945"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:09.474016" level="INFO">&amp;{cloud_check} = { field=CO2Setpoint | expected=20.0 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.473614" elapsed="0.000614"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.474351" elapsed="0.000279"/>
+</kw>
+<arg>ML5p2_99_Parameter_CO2SET</arg>
+<arg>Min</arg>
+<status status="PASS" start="2026-06-12T14:36:08.258060" elapsed="1.216650"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:09.475654" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_Parameter_DFR', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'DefrostInterval', 'SetCommand': '^@993012020001040000000000000000000000000000000000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:09.475409" elapsed="0.000391"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:09.476381" level="INFO">${STEP} = 3</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.475944" elapsed="0.000590"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:09.476935" level="INFO">${STEP} = 3</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.476656" elapsed="0.000422"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:09.477728" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=3 | BlockCmdID=ML5p2_99_Parameter_DFR | SetCommand=^@99301202000104000000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:09.477187" elapsed="0.000651"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:09.477959" elapsed="0.000400"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:10.081096" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set Low Values', 'SetExpected': '%', 'SetCommand': '^@99301202000104000000000000000000000000000000000000000000000000000000000000009F~',...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:09.478493" elapsed="0.603023"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.082672" elapsed="0.000738"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.081912" elapsed="0.001665"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:10.084897" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=3 | BlockCmdID=ML5p2_99_Parameter_DFR | ReadCommand=^?9930120200019A~ | ReadExpected=%^?993012020001040000000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.083775" elapsed="0.001356"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:10.085277" elapsed="0.000351"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:10.988933" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?9930120200019A~', 'TestCase': 'Set Low Values', 'ReadExpected': '%^?99301202000104000000000000000000000000000000000000000000000000000000000000009E~',...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:10.085741" elapsed="0.903408"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.989838" elapsed="0.000368"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.989351" elapsed="0.000930"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:10.990861" level="INFO">&amp;{tele_entry} = { Step=3 | ReadCommand=^?9930120200019A~ | ReadExpected=%^?99301202000104000000000000000000000000000000000000000000000000000000000000009E~ | ReadValue=%^?9930120200010400000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.990385" elapsed="0.000653"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.991161" elapsed="0.000347"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:10.992405" level="INFO">&amp;{cloud_check} = { field=DefrostInterval | expected=4 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.991627" elapsed="0.001117"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.992944" elapsed="0.000269"/>
+</kw>
+<arg>ML5p2_99_Parameter_DFR</arg>
+<arg>Min</arg>
+<status status="PASS" start="2026-06-12T14:36:09.475063" elapsed="1.518507"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:10.994713" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_Parameter_O2SET', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'O2Setpoint', 'SetCommand': '^@9930120216010A0000000000000000000000000000000000000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:10.994525" elapsed="0.000309"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:10.995320" level="INFO">${STEP} = 4</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.994942" elapsed="0.000490"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:10.995949" level="INFO">${STEP} = 4</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.995547" elapsed="0.000533"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:10.996721" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=4 | BlockCmdID=ML5p2_99_Parameter_O2SET | SetCommand=^@9930120216010A0000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:10.996198" elapsed="0.000636"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:10.996954" elapsed="0.000354"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:11.500306" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set Low Values', 'SetExpected': '%', 'SetCommand': '^@9930120216010A00000000000000000000000000000000000000000000000000000000000000B3~',...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:10.997409" elapsed="0.503375"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:11.501619" elapsed="0.000551"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:11.501097" elapsed="0.001158"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:11.502976" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=4 | BlockCmdID=ML5p2_99_Parameter_O2SET | ReadCommand=^?993012021601A1~ | ReadExpected=%^?9930120216010A00000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:11.502372" elapsed="0.000729"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:11.503243" elapsed="0.000474"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:12.207135" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?993012021601A1~', 'TestCase': 'Set Low Values', 'ReadExpected': '%^?9930120216010A00000000000000000000000000000000000000000000000000000000000000B2~',...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:11.503841" elapsed="0.703560"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.208507" elapsed="0.000336"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.207830" elapsed="0.001086"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.209506" level="INFO">&amp;{tele_entry} = { Step=4 | ReadCommand=^?993012021601A1~ | ReadExpected=%^?9930120216010A00000000000000000000000000000000000000000000000000000000000000B2~ | ReadValue=%^?9930120216010A00000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.209016" elapsed="0.000607"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.209741" elapsed="0.000463"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.211448" level="INFO">&amp;{cloud_check} = { field=O2Setpoint | expected=10.0 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.210738" elapsed="0.000917"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.211984" elapsed="0.000313"/>
+</kw>
+<arg>ML5p2_99_Parameter_O2SET</arg>
+<arg>Min</arg>
+<status status="PASS" start="2026-06-12T14:36:10.994195" elapsed="1.218182"/>
+</kw>
+<kw name="End Test Case" owner="test_keywords">
+<kw name="Set Operation Hours" owner="SetOperationHours">
+<msg time="2026-06-12T14:36:12.213287" level="INFO">${op_hours_cmd} = ^@9930120600020100000000000000000000000000000000000000000000000000000000000000A1~</msg>
+<var>${op_hours_cmd}</var>
+<arg>${TC_ID}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.213094" elapsed="0.000382"/>
+</kw>
+<kw name="Publish Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${op_hours_cmd}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.213575" elapsed="0.000323"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>OperationHours=${TC_ID}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.214039" elapsed="0.000273"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${VERIFY_TELE}</arg>
+<arg>${TELE}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.214425" elapsed="0.000316"/>
+</kw>
+<kw name="Wait For Blob File" owner="BlobStorage">
+<msg time="2026-06-12T14:36:12.217678" level="INFO">${cloud_data} = {'customPath': 'e2eTelemetry/ESPTESTSIMULATOR/1/', 'DeviceID': 'ESPTESTSIMULATOR', 'CompressorHourMeter': 1, 'AssetStatusID': '00000000-0000-0000-0000-000000000000', 'MessageID': 'ec1eaffa-0ab7-4185-b...</msg>
+<var>${cloud_data}</var>
+<arg>${BLOB_ROOT}</arg>
+<arg>${DEVICE_ID}</arg>
+<arg>${TC_ID}</arg>
+<arg>timeout=${CLOUD_TIMEOUT}</arg>
+<doc>Polls blob_root/{device_id}/{operation_hours}/ for any .json file.
+Returns the parsed content as a dict and deletes the file.
+Raises TimeoutError if no file appears within timeout seconds.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.214849" elapsed="0.002976"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${VERIFY_CLOUD}</arg>
+<arg>${cloud_data}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.217958" elapsed="0.000384"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:12.219284" level="INFO">${cloud_value} = 0</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:12.219091" elapsed="0.000398"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.220256" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.219935" elapsed="0.000474"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.219616" elapsed="0.000866"/>
+</kw>
+<var name="${check}">{'field': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'expected': '0'}</var>
+<status status="PASS" start="2026-06-12T14:36:12.218937" elapsed="0.001595"/>
+</iter>
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:12.221028" level="INFO">${cloud_value} = 20.0</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:12.220832" elapsed="0.000340"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.221957" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.221634" elapsed="0.000494"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.221307" elapsed="0.000891"/>
+</kw>
+<var name="${check}">{'field': 'CO2Setpoint', 'expected': '20.0'}</var>
+<status status="PASS" start="2026-06-12T14:36:12.220630" elapsed="0.001615"/>
+</iter>
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:12.222736" level="INFO">${cloud_value} = 4</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:12.222476" elapsed="0.000390"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.224091" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.223494" elapsed="0.000877"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.222982" elapsed="0.001479"/>
+</kw>
+<var name="${check}">{'field': 'DefrostInterval', 'expected': '4'}</var>
+<status status="PASS" start="2026-06-12T14:36:12.222331" elapsed="0.002184"/>
+</iter>
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:12.224913" level="INFO">${cloud_value} = 10.0</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:12.224728" elapsed="0.000292"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.225905" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.225657" elapsed="0.000521"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.225130" elapsed="0.001159"/>
+</kw>
+<var name="${check}">{'field': 'O2Setpoint', 'expected': '10.0'}</var>
+<status status="PASS" start="2026-06-12T14:36:12.224602" elapsed="0.001766"/>
+</iter>
+<var>${check}</var>
+<value>@{CLOUD_CHECKS}</value>
+<status status="PASS" start="2026-06-12T14:36:12.218428" elapsed="0.007990"/>
+</for>
+<status status="PASS" start="2026-06-12T14:36:12.212850" elapsed="0.013690"/>
+</kw>
+<status status="PASS" start="2026-06-12T14:36:06.822522" elapsed="5.404376"/>
+</test>
+<test id="s1-s1-t2" name="Set Four Commands To Maximum" line="26">
+<kw name="Start Test Case" owner="test_keywords">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.236858" level="INFO">${TC_ID} = 2</msg>
+<arg>${TC_ID}</arg>
+<arg>${test_case_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.236441" elapsed="0.000629"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.237557" level="INFO">${TC_NAME} = Set High Values</msg>
+<arg>${TC_NAME}</arg>
+<arg>${test_case}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.237200" elapsed="0.000664"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.238377" level="INFO">${SCENE_ID} = 1</msg>
+<arg>${SCENE_ID}</arg>
+<arg>${scene_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.237993" elapsed="0.000593"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.239090" level="INFO">${DEVICE_ID} = ESPTESTSIMULATOR</msg>
+<arg>${DEVICE_ID}</arg>
+<arg>${device_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.238757" elapsed="0.000460"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.239666" level="INFO">${STEP} = 0</msg>
+<arg>${STEP}</arg>
+<arg>${0}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.239338" elapsed="0.000519"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.240342" level="INFO">${CLOUD_CHECKS} = []</msg>
+<var>${CLOUD_CHECKS}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.239983" elapsed="0.000459"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.240931" level="INFO">${CLOUD_CHECKS} = []</msg>
+<arg>${CLOUD_CHECKS}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.240558" elapsed="0.000496"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.241622" level="INFO">&amp;{tele} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values }</msg>
+<var>&amp;{tele}</var>
+<arg>DeviceID=${device_id}</arg>
+<arg>SceneID=${scene_id}</arg>
+<arg>TestCaseID=${test_case_id}</arg>
+<arg>TestCase=${test_case}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.241199" elapsed="0.000542"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.242268" level="INFO">${TELE} = {'DeviceID': 'ESPTESTSIMULATOR', 'SceneID': '1', 'TestCaseID': '2', 'TestCase': 'Set High Values'}</msg>
+<arg>${TELE}</arg>
+<arg>${tele}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.241868" elapsed="0.000602"/>
+</kw>
+<arg>test_case_id=2</arg>
+<arg>test_case=Set High Values</arg>
+<arg>scene_id=${SCENE_ID}</arg>
+<arg>device_id=${DEVICE_ID}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.235967" elapsed="0.006629"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:12.243772" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Max', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E0001010000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:12.243543" elapsed="0.000333"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.244292" level="INFO">${STEP} = 1</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.243986" elapsed="0.000420"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.244776" level="INFO">${STEP} = 1</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.244518" elapsed="0.000489"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.245672" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=1 | BlockCmdID=ML5p2_99_ASC_ASCEN | SetCommand=^@99300F2E000101000000000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.245128" elapsed="0.000736"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.246001" elapsed="0.000354"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:12.848353" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set High Values', 'SetExpected': '%', 'SetCommand': '^@99300F2E00010100000000000000000000000000000000000000000000000000000000000000C4~'...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.246463" elapsed="0.602508"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.850001" elapsed="0.000692"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.849247" elapsed="0.001601"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:12.852277" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=1 | BlockCmdID=ML5p2_99_ASC_ASCEN | ReadCommand=^?99300F2E0001C2~ | ReadExpected=%^?99300F2E0001010000000000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:12.851071" elapsed="0.001662"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.853057" elapsed="0.000382"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:13.456363" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?99300F2E0001C2~', 'TestCase': 'Set High Values', 'ReadExpected': '%^?99300F2E00010100000000000000000000000000000000000000000000000000000000000000C3~'...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:12.853544" elapsed="0.603206"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.457419" elapsed="0.000318"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.457041" elapsed="0.000771"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:13.458422" level="INFO">&amp;{tele_entry} = { Step=1 | ReadCommand=^?99300F2E0001C2~ | ReadExpected=%^?99300F2E00010100000000000000000000000000000000000000000000000000000000000000C3~ | ReadValue=%^?99300F2E00010100000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.457929" elapsed="0.000659"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.458725" elapsed="0.000527"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:13.459936" level="INFO">&amp;{cloud_check} = { field=RefeerOperatingMode.AutomaticSetPointChangeMode | expected=1 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.459431" elapsed="0.000689"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.460293" elapsed="0.000279"/>
+</kw>
+<arg>ML5p2_99_ASC_ASCEN</arg>
+<arg>Max</arg>
+<status status="PASS" start="2026-06-12T14:36:12.243217" elapsed="1.217456"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:13.461571" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_Parameter_CO2SET', 'LimitType': 'Max', 'TeleField': '', 'CloudField': 'CO2Setpoint', 'SetCommand': '^@9930120215012800000000000000000000000000000000000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:13.461334" elapsed="0.000382"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:13.462607" level="INFO">${STEP} = 2</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.461861" elapsed="0.001025"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:13.463588" level="INFO">${STEP} = 2</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.463132" elapsed="0.000614"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:13.464446" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=2 | BlockCmdID=ML5p2_99_Parameter_CO2SET | SetCommand=^@9930120215012800000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.463895" elapsed="0.000739"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:13.464756" elapsed="0.000391"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:13.967943" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set High Values', 'SetExpected': '%', 'SetCommand': '^@9930120215012800000000000000000000000000000000000000000000000000000000000000AB~'...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:13.465318" elapsed="0.502989"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.969258" elapsed="0.000621"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.968528" elapsed="0.001460"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:13.970770" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=2 | BlockCmdID=ML5p2_99_Parameter_CO2SET | ReadCommand=^?993012021501A0~ | ReadExpected=%^?99301202150128000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:13.970117" elapsed="0.000820"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:13.971166" elapsed="0.000714"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:14.574531" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?993012021501A0~', 'TestCase': 'Set High Values', 'ReadExpected': '%^?9930120215012800000000000000000000000000000000000000000000000000000000000000AA~'...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:13.972011" elapsed="0.602760"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.575611" elapsed="0.000607"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.574973" elapsed="0.001406"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:14.577935" level="INFO">&amp;{tele_entry} = { Step=2 | ReadCommand=^?993012021501A0~ | ReadExpected=%^?9930120215012800000000000000000000000000000000000000000000000000000000000000AA~ | ReadValue=%^?9930120215012800000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.576845" elapsed="0.001338"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.578432" elapsed="0.000457"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:14.579642" level="INFO">&amp;{cloud_check} = { field=CO2Setpoint | expected=40.0 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.578998" elapsed="0.000905"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.580016" elapsed="0.000208"/>
+</kw>
+<arg>ML5p2_99_Parameter_CO2SET</arg>
+<arg>Max</arg>
+<status status="PASS" start="2026-06-12T14:36:13.460997" elapsed="1.119302"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-12T14:36:14.581191" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_Parameter_O2SET', 'LimitType': 'Max', 'TeleField': '', 'CloudField': 'O2Setpoint', 'SetCommand': '^@993012021601280000000000000000000000000000000000000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-12T14:36:14.580960" elapsed="0.000334"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-12T14:36:14.581977" level="INFO">${STEP} = 3</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.581454" elapsed="0.000623"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-12T14:36:14.582459" level="INFO">${STEP} = 3</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.582195" elapsed="0.000586"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:14.583395" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=3 | BlockCmdID=ML5p2_99_Parameter_O2SET | SetCommand=^@99301202160128000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:14.582939" elapsed="0.000563"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:14.583619" elapsed="0.000508"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:15.186864" level="INFO">${write_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'WriteValue': '%', 'TestCase': 'Set High Values', 'SetExpected': '%', 'SetCommand': '^@9930120216012800000000000000000000000000000000000000000000000000000000000000AC~'...</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:14.584240" elapsed="0.603351"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.188537" elapsed="0.000562"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.187900" elapsed="0.001410"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:15.190389" level="INFO">&amp;{read_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=3 | BlockCmdID=ML5p2_99_Parameter_O2SET | ReadCommand=^?993012021601A1~ | ReadExpected=%^?993012021601280000000...</msg>
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.189446" elapsed="0.001094"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="PASS" start="2026-06-12T14:36:15.190692" elapsed="0.000668"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-12T14:36:15.894204" level="INFO">${read_result} = {'DeviceID': 'ESPTESTSIMULATOR', 'ReadCommand': '^?993012021601A1~', 'TestCase': 'Set High Values', 'ReadExpected': '%^?9930120216012800000000000000000000000000000000000000000000000000000000000000AB~'...</msg>
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="PASS" start="2026-06-12T14:36:15.191612" elapsed="0.702813"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.895146" elapsed="0.000726"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.894620" elapsed="0.001372"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:15.896622" level="INFO">&amp;{tele_entry} = { Step=3 | ReadCommand=^?993012021601A1~ | ReadExpected=%^?9930120216012800000000000000000000000000000000000000000000000000000000000000AB~ | ReadValue=%^?9930120216012800000000000000000000000000000000...</msg>
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.896118" elapsed="0.000903"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.897334" elapsed="0.000373"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-12T14:36:15.898204" level="INFO">&amp;{cloud_check} = { field=O2Setpoint | expected=40.0 }</msg>
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.897811" elapsed="0.000532"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.898463" elapsed="0.000277"/>
+</kw>
+<arg>ML5p2_99_Parameter_O2SET</arg>
+<arg>Max</arg>
+<status status="PASS" start="2026-06-12T14:36:14.580630" elapsed="1.318192"/>
+</kw>
+<kw name="End Test Case" owner="test_keywords">
+<kw name="Set Operation Hours" owner="SetOperationHours">
+<msg time="2026-06-12T14:36:15.900085" level="INFO">${op_hours_cmd} = ^@9930120600020200000000000000000000000000000000000000000000000000000000000000A2~</msg>
+<var>${op_hours_cmd}</var>
+<arg>${TC_ID}</arg>
+<status status="PASS" start="2026-06-12T14:36:15.899704" elapsed="0.000498"/>
+</kw>
+<kw name="Publish Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${op_hours_cmd}</arg>
+<status status="PASS" start="2026-06-12T14:36:15.900301" elapsed="0.000431"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>OperationHours=${TC_ID}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.900841" elapsed="0.000415"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${VERIFY_TELE}</arg>
+<arg>${TELE}</arg>
+<status status="PASS" start="2026-06-12T14:36:15.901458" elapsed="0.000499"/>
+</kw>
+<kw name="Wait For Blob File" owner="BlobStorage">
+<msg time="2026-06-12T14:36:25.906858" level="INFO">${cloud_data} = {'customPath': 'e2eTelemetry/ESPTESTSIMULATOR/1/', 'DeviceID': 'ESPTESTSIMULATOR', 'CompressorHourMeter': 1, 'AssetStatusID': '00000000-0000-0000-0000-000000000000', 'MessageID': 'ec1eaffa-0ab7-4185-b...</msg>
+<var>${cloud_data}</var>
+<arg>${BLOB_ROOT}</arg>
+<arg>${DEVICE_ID}</arg>
+<arg>${TC_ID}</arg>
+<arg>timeout=${CLOUD_TIMEOUT}</arg>
+<doc>Polls blob_root/{device_id}/{operation_hours}/ for any .json file.
+Returns the parsed content as a dict and deletes the file.
+Raises TimeoutError if no file appears within timeout seconds.</doc>
+<status status="PASS" start="2026-06-12T14:36:15.902140" elapsed="10.004984"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${VERIFY_CLOUD}</arg>
+<arg>${cloud_data}</arg>
+<status status="PASS" start="2026-06-12T14:36:25.907342" elapsed="0.000662"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:25.909101" level="INFO">${cloud_value} = 1</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:25.908832" elapsed="0.000457"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:25.909995" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:25.909747" elapsed="0.000396"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:25.909433" elapsed="0.000781"/>
+</kw>
+<var name="${check}">{'field': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'expected': '1'}</var>
+<status status="PASS" start="2026-06-12T14:36:25.908573" elapsed="0.001691"/>
+</iter>
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:25.910673" level="INFO">${cloud_value} = 40.0</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:25.910483" elapsed="0.000292"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:25.911666" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:25.911263" elapsed="0.000710"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:25.910884" elapsed="0.001168"/>
+</kw>
+<var name="${check}">{'field': 'CO2Setpoint', 'expected': '40.0'}</var>
+<status status="PASS" start="2026-06-12T14:36:25.910349" elapsed="0.001756"/>
+</iter>
+<iter>
+<kw name="Get Nested Value" owner="BlobStorage">
+<msg time="2026-06-12T14:36:25.912495" level="INFO">${cloud_value} = 40.0</msg>
+<var>${cloud_value}</var>
+<arg>${cloud_data}</arg>
+<arg>${check}[field]</arg>
+<doc>Extract a value from a nested dict using a dot-separated path.
+e.g. "RefeerOperatingMode.AutomaticColdTreatmentMode" →
+     data["RefeerOperatingMode"]["AutomaticColdTreatmentMode"]</doc>
+<status status="PASS" start="2026-06-12T14:36:25.912310" elapsed="0.000291"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2026-06-12T14:36:25.913317" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-06-12T14:36:25.913018" elapsed="0.000436"/>
+</kw>
+<arg>Should Be Equal As Strings</arg>
+<arg>${cloud_value}</arg>
+<arg>${check}[expected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-06-12T14:36:25.912708" elapsed="0.000825"/>
+</kw>
+<var name="${check}">{'field': 'O2Setpoint', 'expected': '40.0'}</var>
+<status status="PASS" start="2026-06-12T14:36:25.912192" elapsed="0.001395"/>
+</iter>
+<var>${check}</var>
+<value>@{CLOUD_CHECKS}</value>
+<status status="PASS" start="2026-06-12T14:36:25.908154" elapsed="0.005471"/>
+</for>
+<status status="PASS" start="2026-06-12T14:36:15.899152" elapsed="10.014543"/>
+</kw>
+<status status="PASS" start="2026-06-12T14:36:12.230625" elapsed="13.683461"/>
+</test>
+<kw name="Disconnect From Broker" owner="MqttClient" type="TEARDOWN">
+<status status="PASS" start="2026-06-12T14:36:25.917746" elapsed="0.104207"/>
+</kw>
+<status status="PASS" start="2026-06-12T14:35:56.903303" elapsed="29.118795"/>
+</suite>
+<status status="PASS" start="2026-06-12T14:35:56.829151" elapsed="29.196805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RobotFramework" id="s1" pass="2" fail="0" skip="0">RobotFramework</stat>
+<stat name="TestScenes" id="s1-s1" pass="2" fail="0" skip="0">RobotFramework.TestScenes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

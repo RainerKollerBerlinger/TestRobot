@@ -1,0 +1,19 @@
+name: Hello World Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+    
+env:
+    E2E_CONTAINER: rainerk123/e2etesting:v0.3
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Robot Tests
+        shell: pwsh
+        run: ./scripts/Magic2.ps1

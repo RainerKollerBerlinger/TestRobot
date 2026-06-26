@@ -1,0 +1,7 @@
+lib/certs/*.pem
+lib/certs/*.key
+!lib/certs/.gitkeep
+lib/credentials.py
+lib/aws_secrets.py
+__pycache__/
+*.pyc

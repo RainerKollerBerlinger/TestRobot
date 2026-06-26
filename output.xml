@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.2 on linux)" generated="2026-06-26T10:45:50.167158" rpa="false" schemaversion="5">
+<suite id="s1" name="TestScenes" source="/work/TestScenes.robot">
+<kw name="Suite Connect" owner="test_keywords" type="SETUP">
+<kw name="Connect To Broker" owner="MqttClient">
+<msg time="2026-06-26T10:45:51.265152" level="INFO">Connected to AWS IoT!</msg>
+<arg>port=8883</arg>
+<status status="PASS" start="2026-06-26T10:45:50.709428" elapsed="0.555909"/>
+</kw>
+<kw name="Subscribe" owner="MqttClient">
+<arg>${VERIFY_TRU}</arg>
+<status status="PASS" start="2026-06-26T10:45:51.265614" elapsed="0.500775"/>
+</kw>
+<kw name="Load Commands" owner="SharePointCommandRepository">
+<msg time="2026-06-26T10:46:01.874690" level="INFO">SharePointCommandRepository: loaded 13 command entries.
+Command ID: ('ML5p2_99_ASC_ASCEN', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Min', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E00010000000000000000000000000000000000000000000000000000000000000000C3~', 'SetExpected': '%', 'ReadCommand': '^?99300F2E0001C2~', 'ReadExpected': '%^?99300F2E00010000000000000000000000000000000000000000000000000000000000000000C2~', 'TeleExpected': '0', 'CloudExpected': '0'}
+----------------------------------------
+Command ID: ('ML5p2_99_ASC_ASCEN', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Max', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E00010100000000000000000000000000000000000000000000000000000000000000C4~', 'SetExpected': '%', 'ReadCommand': '^?99300F2E0001C2~', 'ReadExpected': '%^?99300F2E00010100000000000000000000000000000000000000000000000000000000000000C3~', 'TeleExpected': '1', 'CloudExpected': '1'}
+----------------------------------------
+Command ID: ('ML5p2_99_Clock_DAYMON', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Clock_DAYMON', 'LimitType': 'Min', 'TeleField': 'DAYMON', 'CloudField': 'DAYMON', 'SetCommand': '^@99300301040100000000000000000000000000000000000000000000000000000000000000009E~', 'SetExpected': '%', 'ReadCommand': '^?9930030104019D~', 'ReadExpected': '%^?99300301040100000000000000000000000000000000000000000000000000000000000000009D~', 'TeleExpected': '00', 'CloudExpected': ''}
+----------------------------------------
+Command ID: ('ML5p2_99_Clock_DAYMON', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_Clock_DAYMON', 'LimitType': 'Max', 'TeleField': 'DAYMON', 'CloudField': 'DAYMON', 'SetCommand': '^@9930030104016300000000000000000000000000000000000000000000000000000000000000A7~', 'SetExpected': '%', 'ReadCommand': '^?9930030104019D~', 'ReadExpected': '%^?9930030104016300000000000000000000000000000000000000000000000000000000000000A6~', 'TeleExpected': '99', 'CloudExpected': ''}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_CO2SET', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_CO2SET', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'CO2Setpoint', 'SetCommand': '^@9930120215011400000000000000000000000000000000000000000000000000000000000000A6~', 'SetExpected': '%', 'ReadCommand': '^?993012021501A0~', 'ReadExpected': '%^?9930120215011400000000000000000000000000000000000000000000000000000000000000A5~', 'TeleExpected': '20', 'CloudExpected': '20.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_CO2SET', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_CO2SET', 'LimitType': 'Max', 'TeleField': '', 'CloudField': 'CO2Setpoint', 'SetCommand': '^@9930120215012800000000000000000000000000000000000000000000000000000000000000AB~', 'SetExpected': '%', 'ReadCommand': '^?993012021501A0~', 'ReadExpected': '%^?9930120215012800000000000000000000000000000000000000000000000000000000000000AA~', 'TeleExpected': '40', 'CloudExpected': '40.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_O2SET', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_O2SET', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'O2Setpoint', 'SetCommand': '^@9930120216010A00000000000000000000000000000000000000000000000000000000000000B3~', 'SetExpected': '%', 'ReadCommand': '^?993012021601A1~', 'ReadExpected': '%^?9930120216010A00000000000000000000000000000000000000000000000000000000000000B2~', 'TeleExpected': '10', 'CloudExpected': '10.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_O2SET', 'Max')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_O2SET', 'LimitType': 'Max', 'TeleField': '', 'CloudField': 'O2Setpoint', 'SetCommand': '^@9930120216012800000000000000000000000000000000000000000000000000000000000000AC~', 'SetExpected': '%', 'ReadCommand': '^?993012021601A1~', 'ReadExpected': '%^?9930120216012800000000000000000000000000000000000000000000000000000000000000AB~', 'TeleExpected': '40', 'CloudExpected': '40.0'}
+----------------------------------------
+Command ID: ('ML5p2_99_Parameter_DFR', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Parameter_DFR', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'DefrostInterval', 'SetCommand': '^@99301202000103000000000000000000000000000000000000000000000000000000000000009E~', 'SetExpected': '%', 'ReadCommand': '^?9930120200019A~', 'ReadExpected': '%^?99301202000103000000000000000000000000000000000000000000000000000000000000009D~', 'TeleExpected': '3', 'CloudExpected': '12'}
+----------------------------------------
+Command ID: ('ML5p2_99_ReefOp_ACUR', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_ReefOp_ACUR', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'ACurrent', 'SetCommand': '^@993007091A046666B64000000000000000000000000000000000000000000000000000000000EF~', 'SetExpected': 'NA', 'ReadCommand': '^?993007091A04BA~', 'ReadExpected': '%^?993007091A046666B64000000000000000000000000000000000000000000000000000000000EE~', 'TeleExpected': '5.7', 'CloudExpected': '5.7'}
+----------------------------------------
+Command ID: ('ML5p2_99_Clock_HOUR', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_Clock_HOUR', 'LimitType': 'Min', 'TeleField': '', 'CloudField': '', 'SetCommand': '^@99300301000100000000000000000000000000000000000000000000000000000000000000009A~', 'SetExpected': '%', 'ReadCommand': '^?99300301000199~', 'ReadExpected': '%^?993003010001000000000000000000000000000000000000000000000000000000000000000099~', 'TeleExpected': '', 'CloudExpected': ''}
+----------------------------------------
+Command ID: ('ML5p2_99_SensorInfo_AMBTMP', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_SensorInfo_AMBTMP', 'LimitType': 'Min', 'TeleField': '', 'CloudField': 'AmbientTemp', 'SetCommand': '^@993007090604B81E9F410000000000000000000000000000000000000000000000000000000003~', 'SetExpected': 'NA', 'ReadCommand': '^?993007090604AE~', 'ReadExpected': '%^?993007090604B81E9F410000000000000000000000000000000000000000000000000000000002~', 'TeleExpected': '', 'CloudExpected': ''}
+----------------------------------------
+Command ID: ('ML5p2_99_SensorInfo_COMPTHM', 'Min')
+  Details: {'BlockCmdID': 'ML5p2_99_SensorInfo_COMPTHM', 'LimitType': 'Min', 'TeleField': 'COMPTHM', 'CloudField': 'CompressorHourMeter', 'SetCommand': '^@9930120600021D01000000000000000000000000000000000000000000000000000000000000B6~', 'SetExpected': '%', 'ReadCommand': '^?9930120600029F~', 'ReadExpected': '%^?9930120600021D01000000000000000000000000000000000000000000000000000000000000B5~', 'TeleExpected': '', 'CloudExpected': '285'}
+----------------------------------------</msg>
+<doc>Fetch both SharePoint lists, resolve lookups, and build the command cache.</doc>
+<status status="PASS" start="2026-06-26T10:45:51.766644" elapsed="10.108185"/>
+</kw>
+<status status="PASS" start="2026-06-26T10:45:50.708862" elapsed="11.166062"/>
+</kw>
+<test id="s1-t1" name="Set Four Commands To Minimum" line="18">
+<kw name="Start Test Case" owner="test_keywords">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.876790" level="INFO">${TC_ID} = 1</msg>
+<arg>${TC_ID}</arg>
+<arg>${test_case_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.875934" elapsed="0.000898"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.878688" level="INFO">${TC_NAME} = Set Low Values</msg>
+<arg>${TC_NAME}</arg>
+<arg>${test_case}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.877763" elapsed="0.000966"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.879069" level="INFO">${SCENE_ID} = 1</msg>
+<arg>${SCENE_ID}</arg>
+<arg>${scene_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.878836" elapsed="0.000260"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.879374" level="INFO">${DEVICE_ID} = ESPTESTSIMULATOR</msg>
+<arg>${DEVICE_ID}</arg>
+<arg>${device_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.879168" elapsed="0.000240"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.880310" level="INFO">${STEP} = 0</msg>
+<arg>${STEP}</arg>
+<arg>${0}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.879491" elapsed="0.000848"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.880573" level="INFO">${CLOUD_CHECKS} = []</msg>
+<var>${CLOUD_CHECKS}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.880412" elapsed="0.000177"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.880835" level="INFO">${CLOUD_CHECKS} = []</msg>
+<arg>${CLOUD_CHECKS}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.880658" elapsed="0.000202"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.881347" level="INFO">&amp;{tele} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values }</msg>
+<var>&amp;{tele}</var>
+<arg>DeviceID=${device_id}</arg>
+<arg>SceneID=${scene_id}</arg>
+<arg>TestCaseID=${test_case_id}</arg>
+<arg>TestCase=${test_case}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.880926" elapsed="0.000452"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.881674" level="INFO">${TELE} = {'DeviceID': 'ESPTESTSIMULATOR', 'SceneID': '1', 'TestCaseID': '1', 'TestCase': 'Set Low Values'}</msg>
+<arg>${TELE}</arg>
+<arg>${tele}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.881466" elapsed="0.000233"/>
+</kw>
+<arg>test_case_id=1</arg>
+<arg>test_case=Set Low Values</arg>
+<arg>scene_id=${SCENE_ID}</arg>
+<arg>device_id=${DEVICE_ID}</arg>
+<status status="PASS" start="2026-06-26T10:46:01.875556" elapsed="0.006187"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-26T10:46:01.882332" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Min', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E0001000000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-26T10:46:01.882077" elapsed="0.000274"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.882695" level="INFO">${STEP} = 1</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.882429" elapsed="0.000281"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.882950" level="INFO">${STEP} = 1</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.882779" elapsed="0.000194"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-26T10:46:01.883469" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=1 | TestCase=Set Low Values | Step=1 | BlockCmdID=ML5p2_99_ASC_ASCEN | SetCommand=^@99300F2E0001000000000000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-26T10:46:01.883035" elapsed="0.000451"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-26T10:46:01.883560" elapsed="0.000238"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-26T10:46:31.934383" level="FAIL">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="FAIL" start="2026-06-26T10:46:01.883870" elapsed="30.058797">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.942934" elapsed="0.000029"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943036" elapsed="0.000011"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943119" elapsed="0.000010"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943179" elapsed="0.000009"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943242" elapsed="0.000010"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943306" elapsed="0.000009"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943862" elapsed="0.000024"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.943952" elapsed="0.000009"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:46:31.944014" elapsed="0.000010"/>
+</kw>
+<arg>ML5p2_99_ASC_ASCEN</arg>
+<arg>Min</arg>
+<status status="FAIL" start="2026-06-26T10:46:01.881899" elapsed="30.062249">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</status>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<arg>ML5p2_99_Parameter_CO2SET</arg>
+<arg>Min</arg>
+<status status="NOT RUN" start="2026-06-26T10:46:31.944365" elapsed="0.000017"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<arg>ML5p2_99_Parameter_DFR</arg>
+<arg>Min</arg>
+<status status="NOT RUN" start="2026-06-26T10:46:31.944488" elapsed="0.000011"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<arg>ML5p2_99_Parameter_O2SET</arg>
+<arg>Min</arg>
+<status status="NOT RUN" start="2026-06-26T10:46:31.944738" elapsed="0.000015"/>
+</kw>
+<kw name="End Test Case" owner="test_keywords">
+<status status="NOT RUN" start="2026-06-26T10:46:31.944875" elapsed="0.000013"/>
+</kw>
+<status status="FAIL" start="2026-06-26T10:46:01.875024" elapsed="30.069996">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</status>
+</test>
+<test id="s1-t2" name="Set Four Commands To Maximum" line="26">
+<kw name="Start Test Case" owner="test_keywords">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.946269" level="INFO">${TC_ID} = 2</msg>
+<arg>${TC_ID}</arg>
+<arg>${test_case_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.945960" elapsed="0.000347"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.946579" level="INFO">${TC_NAME} = Set High Values</msg>
+<arg>${TC_NAME}</arg>
+<arg>${test_case}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.946391" elapsed="0.000212"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.946831" level="INFO">${SCENE_ID} = 1</msg>
+<arg>${SCENE_ID}</arg>
+<arg>${scene_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.946665" elapsed="0.000188"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.947109" level="INFO">${DEVICE_ID} = ESPTESTSIMULATOR</msg>
+<arg>${DEVICE_ID}</arg>
+<arg>${device_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.946911" elapsed="0.000222"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.947635" level="INFO">${STEP} = 0</msg>
+<arg>${STEP}</arg>
+<arg>${0}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.947199" elapsed="0.000469"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.947930" level="INFO">${CLOUD_CHECKS} = []</msg>
+<var>${CLOUD_CHECKS}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.947752" elapsed="0.000192"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.948178" level="INFO">${CLOUD_CHECKS} = []</msg>
+<arg>${CLOUD_CHECKS}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.948009" elapsed="0.000192"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.948555" level="INFO">&amp;{tele} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values }</msg>
+<var>&amp;{tele}</var>
+<arg>DeviceID=${device_id}</arg>
+<arg>SceneID=${scene_id}</arg>
+<arg>TestCaseID=${test_case_id}</arg>
+<arg>TestCase=${test_case}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.948263" elapsed="0.000308"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.948815" level="INFO">${TELE} = {'DeviceID': 'ESPTESTSIMULATOR', 'SceneID': '1', 'TestCaseID': '2', 'TestCase': 'Set High Values'}</msg>
+<arg>${TELE}</arg>
+<arg>${tele}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.948640" elapsed="0.000197"/>
+</kw>
+<arg>test_case_id=2</arg>
+<arg>test_case=Set High Values</arg>
+<arg>scene_id=${SCENE_ID}</arg>
+<arg>device_id=${DEVICE_ID}</arg>
+<status status="PASS" start="2026-06-26T10:46:31.945610" elapsed="0.003268"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<kw name="Get Step" owner="SharePointCommandRepository">
+<msg time="2026-06-26T10:46:31.949319" level="INFO">${step_data} = {'BlockCmdID': 'ML5p2_99_ASC_ASCEN', 'LimitType': 'Max', 'TeleField': 'ASCEN', 'CloudField': 'RefeerOperatingMode.AutomaticSetPointChangeMode', 'SetCommand': '^@99300F2E0001010000000000000000000000000...</msg>
+<var>${step_data}</var>
+<arg>${block_cmd_id}</arg>
+<arg>${limit_type}</arg>
+<doc>Return the calculated step dict for (BlockCmdID, LimitType).</doc>
+<status status="PASS" start="2026-06-26T10:46:31.949199" elapsed="0.000136"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.949671" level="INFO">${STEP} = 1</msg>
+<var>${STEP}</var>
+<arg>${STEP} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.949396" elapsed="0.000293"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.949958" level="INFO">${STEP} = 1</msg>
+<arg>${STEP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.949773" elapsed="0.000208"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-26T10:46:31.950451" level="INFO">&amp;{write_payload} = { DeviceID=ESPTESTSIMULATOR | SceneID=1 | TestCaseID=2 | TestCase=Set High Values | Step=1 | BlockCmdID=ML5p2_99_ASC_ASCEN | SetCommand=^@99300F2E000101000000000000000000000000000000000000000000000000...</msg>
+<var>&amp;{write_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>SetCommand=${step_data}[SetCommand]</arg>
+<arg>SetExpected=${step_data}[SetExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-26T10:46:31.950043" elapsed="0.000427"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${write_payload}</arg>
+<status status="PASS" start="2026-06-26T10:46:31.950544" elapsed="0.000271"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<msg time="2026-06-26T10:47:02.002801" level="FAIL">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</msg>
+<var>${write_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=SetCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="FAIL" start="2026-06-26T10:46:31.950907" elapsed="30.055538">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${write_result}[WriteValue]</arg>
+<arg>${step_data}[SetExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007018" elapsed="0.000029"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{read_payload}</var>
+<arg>DeviceID=${DEVICE_ID}</arg>
+<arg>SceneID=${SCENE_ID}</arg>
+<arg>TestCaseID=${TC_ID}</arg>
+<arg>TestCase=${TC_NAME}</arg>
+<arg>Step=${STEP}</arg>
+<arg>BlockCmdID=${block_cmd_id}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007121" elapsed="0.000010"/>
+</kw>
+<kw name="Publish Json Message" owner="MqttClient">
+<arg>${INJECT_TOPIC}</arg>
+<arg>${read_payload}</arg>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007206" elapsed="0.000010"/>
+</kw>
+<kw name="Wait For Json Message" owner="MqttClient">
+<var>${read_result}</var>
+<arg>${VERIFY_TRU}</arg>
+<arg>required_key=ReadCommand</arg>
+<arg>timeout=${STEP_TIMEOUT}</arg>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007265" elapsed="0.000009"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${read_result}[ReadValue]</arg>
+<arg>${step_data}[ReadExpected]</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007328" elapsed="0.000009"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{tele_entry}</var>
+<arg>Step=${STEP}</arg>
+<arg>ReadCommand=${step_data}[ReadCommand]</arg>
+<arg>ReadExpected=${step_data}[ReadExpected]</arg>
+<arg>ReadValue=${read_result}[ReadValue]</arg>
+<arg>TeleField=${step_data}[TeleField]</arg>
+<arg>TeleExpected=${step_data}[TeleExpected]</arg>
+<arg>CloudField=${step_data}[CloudField]</arg>
+<arg>CloudExpected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007393" elapsed="0.000010"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${TELE}</arg>
+<arg>${block_cmd_id}=${tele_entry}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007463" elapsed="0.000010"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>&amp;{cloud_check}</var>
+<arg>field=${step_data}[CloudField]</arg>
+<arg>expected=${step_data}[CloudExpected]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007528" elapsed="0.000009"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${CLOUD_CHECKS}</arg>
+<arg>${cloud_check}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007589" elapsed="0.000009"/>
+</kw>
+<arg>ML5p2_99_ASC_ASCEN</arg>
+<arg>Max</arg>
+<status status="FAIL" start="2026-06-26T10:46:31.949021" elapsed="30.058682">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</status>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<arg>ML5p2_99_Parameter_CO2SET</arg>
+<arg>Max</arg>
+<status status="NOT RUN" start="2026-06-26T10:47:02.007895" elapsed="0.000021"/>
+</kw>
+<kw name="Inject Step" owner="test_keywords">
+<arg>ML5p2_99_Parameter_O2SET</arg>
+<arg>Max</arg>
+<status status="NOT RUN" start="2026-06-26T10:47:02.008024" elapsed="0.000012"/>
+</kw>
+<kw name="End Test Case" owner="test_keywords">
+<status status="NOT RUN" start="2026-06-26T10:47:02.008143" elapsed="0.000012"/>
+</kw>
+<status status="FAIL" start="2026-06-26T10:46:31.945249" elapsed="30.063021">TimeoutError: No message with key 'SetCommand' on 'e2e/ESPTESTSIMULATOR/verify/tru' within 30s</status>
+</test>
+<kw name="Disconnect From Broker" owner="MqttClient" type="TEARDOWN">
+<status status="PASS" start="2026-06-26T10:47:02.008773" elapsed="0.172441"/>
+</kw>
+<status status="FAIL" start="2026-06-26T10:45:50.169863" elapsed="72.011424"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TestScenes" id="s1" pass="0" fail="2" skip="0">TestScenes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
