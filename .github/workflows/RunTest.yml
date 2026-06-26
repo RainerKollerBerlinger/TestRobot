@@ -18,6 +18,8 @@ env:
   SP_COMMAND_LIMITS_LIST_ID: ${{ secrets.SP_COMMAND_LIMITS_LIST_ID }}
   SP_BLOCK_COMMANDS_LIST_ID: ${{ secrets.SP_BLOCK_COMMANDS_LIST_ID }}
 
+  
+
 jobs:
   hello-world:
     runs-on: ubuntu-latest
@@ -46,6 +48,15 @@ jobs:
         shell: pwsh
         run: |
           Get-ChildItem ./lib/certs
+
+      - name: Verify environment variables
+        shell: pwsh
+        run: |
+          if (-not $env:AWS_ENDPOINT) {
+            throw "AWS_ENDPOINT is missing"
+          }
+
+          Write-Host "AWS_ENDPOINT is set. Length: $($env:AWS_ENDPOINT.Length)"
 
       - name: Run Robot Tests
         shell: pwsh
