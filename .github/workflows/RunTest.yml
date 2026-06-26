@@ -73,15 +73,6 @@ jobs:
             -e AWS_ENDPOINT `
             $env:E2E_CONTAINER `
             python3 -c "import os; print('[' + repr(os.getenv('AWS_ENDPOINT')) + ']')"
-
-      - name: DNS lookup
-        shell: pwsh
-        run: |
-          docker run --rm `
-            -e AWS_ENDPOINT `
-            $env:E2E_CONTAINER `
-            python3 -c "import os,socket; print(socket.gethostbyname(os.environ['AWS_ENDPOINT']))"            
-
       - name: Run Robot Tests
         shell: pwsh
         run: ./scripts/Magic2.ps1
