@@ -2,17 +2,51 @@ name: Hello World Workflow
 
 on:
   push:
-    branches: [ "main" ]
-    
+    branches:
+      - main
+
 env:
-    E2E_CONTAINER: rainerk123/e2etesting:v0.3
+  E2E_CONTAINER: rainerk123/e2etesting:v0.3
+
+  AWS_ENDPOINT: ${{ secrets.AWS_ENDPOINT }}
+
+  SP_TENANT_ID: ${{ secrets.SP_TENANT_ID }}
+  SP_CLIENT_ID: ${{ secrets.SP_CLIENT_ID }}
+  SP_CLIENT_SECRET: ${{ secrets.SP_CLIENT_SECRET }}
+  SP_SITE_ID: ${{ secrets.SP_SITE_ID }}
+
+  SP_COMMAND_LIMITS_LIST_ID: ${{ secrets.SP_COMMAND_LIMITS_LIST_ID }}
+  SP_BLOCK_COMMANDS_LIST_ID: ${{ secrets.SP_BLOCK_COMMANDS_LIST_ID }}
 
 jobs:
   hello-world:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Create certificate files
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path ./lib/certs | Out-Null
+
+          @"
+${{ secrets.MQTT_CERT_PEM }}
+"@ | Set-Content -Path ./lib/certs/CST-E2E-1.cert.pem
+
+          @"
+${{ secrets.MQTT_PRIVATE_KEY }}
+"@ | Set-Content -Path ./lib/certs/CST-E2E-1.private.key
+
+          @"
+${{ secrets.MQTT_ROOT_CA }}
+"@ | Set-Content -Path ./lib/certs/AmazonRootCA1.pem
+
+      - name: Verify cert files
+        shell: pwsh
+        run: |
+          Get-ChildItem ./lib/certs
 
       - name: Run Robot Tests
         shell: pwsh
