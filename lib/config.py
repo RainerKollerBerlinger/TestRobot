@@ -6,10 +6,6 @@ _PROJECT = os.path.dirname(_ROOT)                       # End2EndTestingV2/
 
 
 def get_env(name: str) -> str:
-    """
-    Read a required environment variable.
-    Raises a clear exception if it is missing.
-    """
     value = os.getenv(name)
 
     if value is None or value.strip() == "":
@@ -17,12 +13,42 @@ def get_env(name: str) -> str:
             f"Required environment variable '{name}' is not set."
         )
 
+    return value.strip()
+
+
+def get_hostname_env(name: str) -> str:
+    value = get_env(name)
+
+    # Remove accidental quotes
+    value = value.strip('"').strip("'")
+
+    # Common mistake: storing a URL instead of hostname
+    if "://" in value:
+        raise RuntimeError(
+            f"Environment variable '{name}' must be a hostname only, "
+            f"not a URL. Remove protocol prefix like https:// or mqtts://."
+        )
+
+    # Common mistake: storing host:port
+    if ":" in value:
+        raise RuntimeError(
+            f"Environment variable '{name}' must not include a port. "
+            f"Use hostname only, without :8883."
+        )
+
+    # Common mistake: storing path
+    if "/" in value:
+        raise RuntimeError(
+            f"Environment variable '{name}' must not include a path. "
+            f"Use hostname only."
+        )
+
     return value
 
 
 # ── AWS IoT ───────────────────────────────────────────────────────────────────
 
-ENDPOINT = get_env("AWS_ENDPOINT")
+ENDPOINT = get_hostname_env("AWS_ENDPOINT")
 
 CERT_FILE = os.path.join(_HERE, "certs", "CST-E2E-1.cert.pem")
 KEY_FILE  = os.path.join(_HERE, "certs", "CST-E2E-1.private.key")
