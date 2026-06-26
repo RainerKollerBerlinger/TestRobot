@@ -72,7 +72,7 @@ jobs:
           docker run --rm `
             -e AWS_ENDPOINT `
             $env:E2E_CONTAINER `
-            python -c "import os; print('[' + repr(os.getenv('AWS_ENDPOINT')) + ']')"
+            python3 -c "import os; print('[' + repr(os.getenv('AWS_ENDPOINT')) + ']')"
 
       - name: Run Robot Tests
         shell: pwsh
