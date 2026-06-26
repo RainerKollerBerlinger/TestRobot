@@ -58,6 +58,16 @@ jobs:
 
           Write-Host "AWS_ENDPOINT is set. Length: $($env:AWS_ENDPOINT.Length)"
 
+      - name: Check AWS endpoint DNS
+        shell: pwsh
+        run: |
+          docker run --rm `
+            -e AWS_ENDPOINT `
+            -v "${PWD}:/work" `
+            --workdir /work `
+            $env:E2E_CONTAINER `
+            pwsh -Command 'python3 -c "import os, socket; h=os.environ[\"AWS_ENDPOINT\"].strip(); print(\"Length:\", len(h)); print(\"Resolving...\"); print(socket.gethostbyname(h))"'
+
       - name: Run Robot Tests
         shell: pwsh
         run: ./scripts/Magic2.ps1
